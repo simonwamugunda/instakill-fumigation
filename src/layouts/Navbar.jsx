@@ -11,20 +11,21 @@ export default function Navbar(){
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <ShieldCheck className="text-brand-primary" />
-            <Link to="/" className="font-semibold text-lg text-brand-darkBlue">INTAKILL Fumigation</Link>
+            <Link to="/" className="font-semibold text-lg text-brand-darkBlue">INSTAKILL Fumigation</Link>
           </div>
 
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className="text-gray-700 hover:text-brand-primary">Home</Link>
             <div className="relative group">
               <Link to="/services" className="text-gray-700 hover:text-brand-primary">Services</Link>
-              <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity">
-                <Link to="/services#sofa" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Sofa Cleaning</Link>
-                <Link to="/services#mattress" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Mattress Cleaning</Link>
-                <Link to="/services#deep" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Deep Cleaning</Link>
-                <Link to="/services#carpet" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Carpet Cleaning</Link>
-                <Link to="/services#post" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Post Construction Cleaning</Link>
-                <Link to="/services#tk" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Toilet & Kitchen Cleaning</Link>
+              <div className="absolute left-0 mt-2 w-64 bg-white border rounded-md shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity">
+                <Link to="/services/sofa" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Sofa Cleaning</Link>
+                <Link to="/services/mattress" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Mattress Cleaning</Link>
+                <Link to="/services/deep" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Deep Cleaning</Link>
+                <Link to="/services/carpet" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Carpet Cleaning</Link>
+                <Link to="/services/post" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Post Construction Cleaning</Link>
+                <Link to="/services/tk" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Toilet & Kitchen Cleaning</Link>
+                <Link to="/services/pest-control" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Pest Control</Link>
               </div>
             </div>
             <Link to="/about" className="text-gray-700 hover:text-brand-primary">About</Link>

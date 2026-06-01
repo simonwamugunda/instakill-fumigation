@@ -14,7 +14,7 @@ export default function LeadCaptureForm(){
     return (
       <div className="text-center">
         <div className="text-green-600 font-semibold text-xl">✓ Request Received Successfully</div>
-        <p className="mt-2 text-gray-700">An Intakill dispatch coordinator will call you back within 15 minutes.</p>
+        <p className="mt-2 text-gray-700">An Instakill dispatch coordinator will call you back within 15 minutes.</p>
       </div>
     )
   }
@@ -40,6 +40,7 @@ export default function LeadCaptureForm(){
           <option value="carpet">Carpet Cleaning</option>
           <option value="post">Post Construction Cleaning</option>
           <option value="tk">Toilet & Kitchen Cleaning</option>
+          <option value="pest-control">Pest Control</option>
         </select>
       </div>
 

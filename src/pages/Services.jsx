@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const services = [
   { id: 'sofa', title: 'Sofa Cleaning', desc: 'Deep upholstery cleaning for sofas and lounge furniture.' },
@@ -17,11 +18,11 @@ export default function Services(){
       <p className="mt-2 text-gray-600">Choose a service for details or request a free estimate.</p>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {services.map(s => (
+          {services.map(s => (
           <div id={s.id} key={s.id} className="p-6 border rounded-md hover:shadow-md">
             <h3 className="font-semibold text-lg">{s.title}</h3>
             <p className="mt-2 text-gray-600">{s.desc}</p>
-            <a href="#contact" className="mt-4 inline-flex items-center text-brand-primary font-medium">Request details <ArrowRight className="ml-1" /></a>
+            <Link to={`/services/${s.id}`} className="mt-4 inline-flex items-center text-brand-primary font-medium">View Service <ArrowRight className="ml-1" /></Link>
           </div>
         ))}
       </div>
