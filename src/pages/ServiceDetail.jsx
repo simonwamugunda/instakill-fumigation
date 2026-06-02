@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import sofaImg from '../images/sofa.jpg'
 import sofa2Img from '../images/sofa (2).jpg'
-import bedBugsImg from '../images/bed bugs.jpg'
 import carpet1 from '../images/carpet.jpg'
 import carpet2 from '../images/carpet2.jpg'
 import carpet3 from '../images/carpet3.jpg'
@@ -28,8 +27,9 @@ import post1 from '../images/post.jpg'
 import post2 from '../images/post1.jpg'
 import post3 from '../images/post3.jpg'
 import Lightbox from '../components/ui/Lightbox'
+import Hero from '../components/ui/Hero'
+import HowWeDoIt from '../components/HowWeDoIt'
 
-// helper to map service id to image arrays
 const SERVICE_IMAGES = {
   sofa: [sofaImg, sofa2Img],
   carpet: [carpet1, carpet2, carpet3, carpet4],
@@ -73,87 +73,94 @@ export default function ServiceDetail(){
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-brand-darkBlue">{info.title}</h1>
-      <p className="mt-4 text-gray-700">{info.desc}</p>
-      <div className="mt-6">
-        <a href="#contact" className="inline-flex items-center text-brand-primary font-medium">Request details <ArrowRight className="ml-1" /></a>
+    <div>
+      <Hero title={info.title} subtitle={info.desc} image={SERVICE_IMAGES[id] ? SERVICE_IMAGES[id][0] : pestMain} />
 
-        {/* Image galleries per service */}
-        {id === 'sofa' && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            {SERVICE_IMAGES.sofa.map((src, i) => (
-              <img key={i} src={src} alt={`sofa-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.sofa, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
-            ))}
-          </div>
-        )}
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold text-brand-darkBlue">{info.title}</h1>
+        <p className="mt-4 text-gray-700">{info.desc}</p>
 
-        {id === 'carpet' && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            {SERVICE_IMAGES.carpet.map((src,i) => (
-              <img key={i} src={src} alt={`carpet-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.carpet, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
-            ))}
-          </div>
-        )}
+        <div className="mt-6">
+          <a href="#contact" className="inline-flex items-center text-brand-primary font-medium">Request details <ArrowRight className="ml-1" /></a>
 
-        {id === 'mattress' && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            {SERVICE_IMAGES.mattress.map((src,i) => (
-              <img key={i} src={src} alt={`mattress-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.mattress, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
-            ))}
-          </div>
-        )}
-
-        {id === 'pest-control' && (
-          <div className="mt-4">
-            <h2 className="font-semibold">Pest Types We Treat</h2>
-            <ul className="mt-2 list-disc list-inside text-gray-700">
-              <li>Bed Bugs</li>
-              <li>Termites</li>
-              <li>Rodents</li>
-              <li>Cockroaches</li>
-              <li>Ants</li>
-              <li>Wasps</li>
-              <li>Scorpions</li>
-            </ul>
-
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
-              {SERVICE_IMAGES['pest-control'].map((src,i) => (
-                <img key={i} src={src} alt={`pest-${i}`} onClick={() => openLightbox(SERVICE_IMAGES['pest-control'], i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+          {/* Image galleries per service */}
+          {id === 'sofa' && (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              {SERVICE_IMAGES.sofa.map((src, i) => (
+                <img key={i} src={src} alt={`sofa-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.sofa, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
               ))}
             </div>
-          </div>
-        )}
+          )}
 
-        {id === 'deep' && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <img src={deep1} alt="Deep 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={deep2} alt="Deep 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={deep3} alt="Deep 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={deep4} alt="Deep 4" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-          </div>
-        )}
+          {id === 'carpet' && (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              {SERVICE_IMAGES.carpet.map((src,i) => (
+                <img key={i} src={src} alt={`carpet-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.carpet, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+              ))}
+            </div>
+          )}
 
-        {id === 'post' && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <img src={post1} alt="Post 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={post2} alt="Post 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={post3} alt="Post 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-          </div>
-        )}
+          {id === 'mattress' && (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              {SERVICE_IMAGES.mattress.map((src,i) => (
+                <img key={i} src={src} alt={`mattress-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.mattress, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+              ))}
+            </div>
+          )}
 
-        {id === 'tk' && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            {SERVICE_IMAGES.tk.map((src,i) => (
-              <img key={i} src={src} alt={`tk-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.tk, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
-            ))}
-          </div>
+          {id === 'pest-control' && (
+            <div className="mt-4">
+              <h2 className="font-semibold">Pest Types We Treat</h2>
+              <ul className="mt-2 list-disc list-inside text-gray-700">
+                <li>Bed Bugs</li>
+                <li>Termites</li>
+                <li>Rodents</li>
+                <li>Cockroaches</li>
+                <li>Ants</li>
+                <li>Wasps</li>
+                <li>Scorpions</li>
+              </ul>
+
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                {SERVICE_IMAGES['pest-control'].map((src,i) => (
+                  <img key={i} src={src} alt={`pest-${i}`} onClick={() => openLightbox(SERVICE_IMAGES['pest-control'], i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {id === 'deep' && (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              <img src={deep1} alt="Deep 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+              <img src={deep2} alt="Deep 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+              <img src={deep3} alt="Deep 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+              <img src={deep4} alt="Deep 4" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+            </div>
+          )}
+
+          {id === 'post' && (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              <img src={post1} alt="Post 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+              <img src={post2} alt="Post 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+              <img src={post3} alt="Post 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+            </div>
+          )}
+
+          {id === 'tk' && (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              {SERVICE_IMAGES.tk.map((src,i) => (
+                <img key={i} src={src} alt={`tk-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.tk, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {lightboxOpen && (
+          <Lightbox images={lightboxImages} startIndex={lightboxStart} onClose={() => setLightboxOpen(false)} />
         )}
-      
-      {lightboxOpen && (
-        <Lightbox images={lightboxImages} startIndex={lightboxStart} onClose={() => setLightboxOpen(false)} />
-      )}
       </div>
+
+      <HowWeDoIt />
     </div>
   )
 }

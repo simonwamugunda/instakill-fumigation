@@ -22,7 +22,7 @@ export default function Contact(){
           </section>
         </div>
 
-        <div className="bg-white/95 p-6 rounded-md">
+        <div className="bg-white/95 p-6 rounded-md text-gray-800">
           <LeadCaptureForm />
         </div>
       </div>

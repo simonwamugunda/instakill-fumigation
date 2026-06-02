@@ -8,6 +8,30 @@ export default function LeadCaptureForm(){
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Lead Payload Dispatched: ', formData)
+
+    // Build a friendly service label for the message
+    const serviceLabels = {
+      sofa: 'Sofa Cleaning',
+      mattress: 'Mattress Cleaning',
+      deep: 'Deep Cleaning',
+      carpet: 'Carpet Cleaning',
+      post: 'Post Construction Cleaning',
+      'tk': 'Toilet & Kitchen Cleaning',
+      'pest-control': 'Pest Control'
+    }
+
+    const serviceText = serviceLabels[formData.service] || formData.service
+
+    // WhatsApp number from contact page (international format, no plus)
+    const waNumber = '254740611883'
+
+    const message = `Hello, I need ${serviceText}. Name: ${formData.name || 'N/A'}. My phone: ${formData.phone || 'N/A'}.`
+    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`
+
+    // Open WhatsApp chat in a new tab/window
+    window.open(url, '_blank')
+
+    // Optionally keep local submitted state in case open fails
     setSubmitted(true)
   }
 

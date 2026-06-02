@@ -2,6 +2,8 @@ import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import serviceImg from '../images/service.jpg'
+import Hero from '../components/ui/Hero'
+import HowWeDoIt from '../components/HowWeDoIt'
 import sofaImg from '../images/sofa.jpg'
 import carpetImg from '../images/carpet.jpg'
 import mattressImg from '../images/mattress.jpg'
@@ -17,15 +19,15 @@ const services = [
   { id: 'carpet', title: 'Carpet Cleaning', desc: 'Hot water extraction and stain removal for carpets.' },
   { id: 'post', title: 'Post Construction Cleaning', desc: 'Thorough cleanup after construction, removing dust and debris.' },
   { id: 'tk', title: 'Toilet & Kitchen Cleaning', desc: 'Sanitisation and deep degreasing for kitchens and bathrooms.' },
+  { id: 'pest-control', title: 'Pest Control', desc: 'Comprehensive pest control solutions for homes and businesses.' },
 ]
 
 export default function Services(){
   return (
-    <div className="py-12" style={{backgroundImage: `linear-gradient(rgba(2,6,23,0.45), rgba(2,6,23,0.15)), url(${serviceImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-3xl font-bold text-white">Services</h1>
-        <p className="mt-2 text-white/90">Choose a service for details or request a free estimate.</p>
+    <div>
+      <Hero title="Services" subtitle="Choose a service for details or request a free estimate." image={serviceImg} />
 
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map(s => {
               let thumb = null
@@ -47,6 +49,7 @@ export default function Services(){
               )
             })}
         </div>
+        <HowWeDoIt />
       </div>
     </div>
   )
