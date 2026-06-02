@@ -1,5 +1,6 @@
 import React from 'react'
 import { Shield, Sparkles, Award, ArrowRight, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import LeadCaptureForm from '../components/Form/LeadCaptureForm'
 import pestImg from '../images/pest.jpg'
 
@@ -20,8 +21,8 @@ export default function Home(){
               <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight drop-shadow">Cleaner Homes. Safer Families.</h1>
               <p className="mt-4 text-lg text-white/90 max-w-xl">Instakill offers professional cleaning and fumigation using eco-friendly protocols. Fast response across Nairobi, Kiambu and country-wide for large contracts.</p>
               <div className="mt-6 flex items-center gap-4">
-                <a href="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-gradient-to-r from-brand-primary to-brand-primary/90 text-white font-semibold shadow-lg hover:scale-[1.02] transition-transform">Book Free Inspection</a>
-                <a href="/services" className="inline-flex items-center gap-2 px-4 py-3 rounded-md border border-white/30 text-white bg-white/5 hover:bg-white/10 transition">View Services</a>
+                <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-gradient-to-r from-brand-primary to-brand-primary/90 text-white font-semibold shadow-lg hover:scale-[1.02] transition-transform">Book Free Inspection</Link>
+                <Link to="/services" className="inline-flex items-center gap-2 px-4 py-3 rounded-md border border-white/30 text-white bg-white/5 hover:bg-white/10 transition">View Services</Link>
               </div>
 
               <div className="mt-6 flex items-center gap-3">

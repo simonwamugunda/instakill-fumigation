@@ -18,9 +18,9 @@ export default function App(){
         <main className="pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Services" element={<Services />} />
-            <Route path="/Services/:id" element={<ServiceDetail />} />
-            <Route path="/Services/pest-control" element={<PestControl />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
+            <Route path="/services/pest-control" element={<PestControl />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
