@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import sofaImg from '../images/sofa.jpg'
@@ -27,6 +27,18 @@ import deep4 from '../images/deep3.jpg'
 import post1 from '../images/post.jpg'
 import post2 from '../images/post1.jpg'
 import post3 from '../images/post3.jpg'
+import Lightbox from '../components/ui/Lightbox'
+
+// helper to map service id to image arrays
+const SERVICE_IMAGES = {
+  sofa: [sofaImg, sofa2Img],
+  carpet: [carpet1, carpet2, carpet3, carpet4],
+  mattress: [mattress1, mattress2, mattress3, mattress4],
+  'pest-control': [pest1, pest2, pest3],
+  tk: [tk1, tk2, tk3, tk4],
+  deep: [deep1, deep2, deep3, deep4],
+  post: [post1, post2, post3]
+}
 
 const DETAILS = {
   sofa: { title: 'Sofa Cleaning', desc: 'Deep upholstery cleaning for sofas and lounge furniture.' },
@@ -41,6 +53,15 @@ const DETAILS = {
 export default function ServiceDetail(){
   const { id } = useParams()
   const info = DETAILS[id]
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxImages, setLightboxImages] = useState([])
+  const [lightboxStart, setLightboxStart] = useState(0)
+
+  function openLightbox(arr, start = 0){
+    setLightboxImages(arr)
+    setLightboxStart(start)
+    setLightboxOpen(true)
+  }
 
   if(!info){
     return (
@@ -60,27 +81,26 @@ export default function ServiceDetail(){
 
         {/* Image galleries per service */}
         {id === 'sofa' && (
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-              <img src={sofaImg} alt="Sofa" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-              <img src={sofa2Img} alt="Sofa 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            </div>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {SERVICE_IMAGES.sofa.map((src, i) => (
+              <img key={i} src={src} alt={`sofa-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.sofa, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+            ))}
+          </div>
         )}
 
         {id === 'carpet' && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <img src={carpet1} alt="Carpet 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={carpet2} alt="Carpet 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={carpet3} alt="Carpet 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={carpet4} alt="Carpet 4" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+            {SERVICE_IMAGES.carpet.map((src,i) => (
+              <img key={i} src={src} alt={`carpet-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.carpet, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+            ))}
           </div>
         )}
 
         {id === 'mattress' && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <img src={mattress1} alt="Mattress 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={mattress2} alt="Mattress 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={mattress3} alt="Mattress 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={mattress4} alt="Mattress 4" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+            {SERVICE_IMAGES.mattress.map((src,i) => (
+              <img key={i} src={src} alt={`mattress-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.mattress, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+            ))}
           </div>
         )}
 
@@ -98,9 +118,9 @@ export default function ServiceDetail(){
             </ul>
 
             <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
-              <img src={pest1} alt="Pest control" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-              <img src={pest2} alt="Pest control 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-              <img src={pest3} alt="Pest control 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+              {SERVICE_IMAGES['pest-control'].map((src,i) => (
+                <img key={i} src={src} alt={`pest-${i}`} onClick={() => openLightbox(SERVICE_IMAGES['pest-control'], i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+              ))}
             </div>
           </div>
         )}
@@ -124,12 +144,15 @@ export default function ServiceDetail(){
 
         {id === 'tk' && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <img src={tk1} alt="Toilet and Kitchen 1" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={tk2} alt="Toilet and Kitchen 2" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={tk3} alt="Toilet and Kitchen 3" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
-            <img src={tk4} alt="Toilet and Kitchen 4" className="w-full h-48 md:h-56 object-cover rounded-md shadow" />
+            {SERVICE_IMAGES.tk.map((src,i) => (
+              <img key={i} src={src} alt={`tk-${i}`} onClick={() => openLightbox(SERVICE_IMAGES.tk, i)} className="w-full h-48 md:h-56 object-cover rounded-md shadow cursor-pointer" />
+            ))}
           </div>
         )}
+      
+      {lightboxOpen && (
+        <Lightbox images={lightboxImages} startIndex={lightboxStart} onClose={() => setLightboxOpen(false)} />
+      )}
       </div>
     </div>
   )
