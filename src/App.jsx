@@ -13,7 +13,7 @@ import PestControl from './pages/PestControl'
 export default function App(){
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-white text-gray-900">
+      <div className="min-h-screen text-slate-900">
         <Navbar />
         <main className="pt-20">
           <Routes>

@@ -1,31 +1,62 @@
 import React from 'react'
+import { Clock, MapPin, MessageSquare, Phone } from 'lucide-react'
 import LeadCaptureForm from '../components/Form/LeadCaptureForm'
-import { Phone, MessageSquare } from 'lucide-react'
 import contactImg from '../images/contact.jpg'
+import Hero from '../components/ui/Hero'
 
 export default function Contact(){
   return (
-    <div className="py-16" style={{backgroundImage: `linear-gradient(rgba(2,6,23,0.45), rgba(2,6,23,0.12)), url(${contactImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
-        <div>
-          <h1 className="text-2xl font-bold">Contact Us</h1>
-          <p className="mt-2 text-white/90">Call or WhatsApp us to request a free estimate.</p>
+    <div>
+      <Hero title="Contact Instakill" subtitle="Call, WhatsApp, or request a free estimate for cleaning, fumigation, and pest control." image={contactImg} eyebrow="Book service" />
 
-          <div className="mt-6 space-y-3">
-            <div className="flex items-center gap-3"><Phone /> <a href="tel:+254740611883" className="text-white">0740611883</a></div>
-            <div className="flex items-center gap-3"><MessageSquare /> <a href="https://wa.me/254740611883" target="_blank" rel="noreferrer" className="text-white">WhatsApp Us</a></div>
+      <section className="section-shell py-14">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <span className="eyebrow">Fast response</span>
+            <h1 className="mt-4 display-title">Tell us what is happening and we will recommend the next step</h1>
+            <p className="section-copy">For urgent pest outbreaks, send a WhatsApp message with the location, service needed, and photos if available.</p>
+
+            <div className="mt-8 grid gap-4">
+              <a href="tel:+254740611883" className="premium-card flex items-center gap-4 p-5 transition hover:border-brand-primary">
+                <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-primary text-white"><Phone className="h-6 w-6" /></span>
+                <span>
+                  <span className="block text-sm font-bold uppercase text-slate-500">Call</span>
+                  <span className="block text-lg font-extrabold text-brand-darkBlue">0740611883</span>
+                </span>
+              </a>
+              <a href="https://wa.me/254740611883" target="_blank" rel="noreferrer" className="premium-card flex items-center gap-4 p-5 transition hover:border-emerald-400">
+                <span className="flex h-12 w-12 items-center justify-center rounded-md bg-emerald-600 text-white"><MessageSquare className="h-6 w-6" /></span>
+                <span>
+                  <span className="block text-sm font-bold uppercase text-slate-500">WhatsApp</span>
+                  <span className="block text-lg font-extrabold text-brand-darkBlue">Message Instakill</span>
+                </span>
+              </a>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="premium-card p-5">
+                <MapPin className="h-5 w-5 text-brand-accent" />
+                <h2 className="mt-3 font-extrabold text-slate-950">Location</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Nairobi main office. Exact address is provided on booking.</p>
+              </div>
+              <div className="premium-card p-5">
+                <Clock className="h-5 w-5 text-brand-accent" />
+                <h2 className="mt-3 font-extrabold text-slate-950">Hours</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600">24/7 emergency response and scheduled service visits.</p>
+              </div>
+            </div>
           </div>
 
-          <section className="mt-6">
-            <h2 className="font-semibold">Address</h2>
-            <p className="text-white/90">Nairobi (main office) — Exact address provided on booking.</p>
-          </section>
+          <div className="premium-card p-6 shadow-xl shadow-slate-200">
+            <div className="mb-5 border-b border-slate-200 pb-5">
+              <p className="text-sm font-bold uppercase text-brand-accent">Free estimate</p>
+              <h2 className="mt-1 text-2xl font-extrabold text-brand-darkBlue">Request a callback</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600">The form opens WhatsApp with your request details ready to send.</p>
+            </div>
+            <LeadCaptureForm />
+          </div>
         </div>
-
-        <div className="bg-white/95 p-6 rounded-md text-gray-800">
-          <LeadCaptureForm />
-        </div>
-      </div>
+      </section>
     </div>
   )
 }
