@@ -92,7 +92,7 @@ export default function Navbar(){
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
             <NavLink to="/" className={navClass}>Home</NavLink>
-            <div className="relative" ref={dropdownRef} onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+            <div className="relative pb-2" ref={dropdownRef} onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
               <button
                 aria-expanded={dropdownOpen}
                 aria-controls={menuId}
@@ -108,7 +108,7 @@ export default function Navbar(){
                 role="menu"
                 aria-hidden={!dropdownOpen}
                 onKeyDown={onMenuKeyDown}
-                className={`absolute left-0 top-full mt-2 w-72 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 transition ${dropdownOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
+                className={`absolute left-0 top-full mt-0 w-72 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 transition ${dropdownOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
               >
                 <div className="p-2">
                   {serviceLinks.map((item, index) => (
