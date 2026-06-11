@@ -13,13 +13,13 @@ import tkImg from '../images/toilet and kitchen.jpg'
 import pestThumb from '../images/pest control.jpg'
 
 const services = [
+  { id: 'pest-control', title: 'Pest Control', desc: 'We use up to date techniques and technology to effectively exterminate pests in residential homes, business (such as restaurants, hotels, and offices), and industrial facilities (such as godowns and warehouses).', image: pestThumb, icon: Bug, tags: ['Fumigation', 'Infestation'] },
   { id: 'sofa', title: 'Sofa Cleaning', desc: 'Deep upholstery care for sofas, lounge chairs, and fabric seating.', image: sofaImg, icon: Home, tags: ['Upholstery', 'Deodorising'] },
   { id: 'mattress', title: 'Mattress Cleaning', desc: 'Dust mite, odour, stain, and bed bug focused mattress treatment.', image: mattressImg, icon: Bed, tags: ['Bedrooms', 'Bed bugs'] },
   { id: 'deep', title: 'Deep Cleaning', desc: 'Whole-property hygiene reset for homes, rentals, offices, and facilities.', image: deepImg, icon: Sparkles, tags: ['Sanitising', 'Move-in ready'] },
   { id: 'carpet', title: 'Carpet Cleaning', desc: 'Extraction cleaning and stain removal for carpets and rugs.', image: carpetImg, icon: Building2, tags: ['Stains', 'Extraction'] },
   { id: 'post', title: 'Post Construction Cleaning', desc: 'Dust, debris, paint marks, and final handover cleaning after construction.', image: postImg, icon: Construction, tags: ['Dust removal', 'Handover'] },
-  { id: 'tk', title: 'Toilet & Kitchen Cleaning', desc: 'Degreasing, descaling, sanitising, and deep cleaning for high-use wet areas.', image: tkImg, icon: ShowerHead, tags: ['Degreasing', 'Sanitising'] },
-  { id: 'pest-control', title: 'Pest Control', desc: 'Comprehensive pest treatment for homes, restaurants, offices, and stores.', image: pestThumb, icon: Bug, tags: ['Fumigation', 'Infestation'] }
+  { id: 'tk', title: 'Toilet & Kitchen Cleaning', desc: 'Degreasing, descaling, sanitising, and deep cleaning for high-use wet areas.', image: tkImg, icon: ShowerHead, tags: ['Degreasing', 'Sanitising'] }
 ]
 
 export default function Services(){

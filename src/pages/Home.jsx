@@ -31,8 +31,8 @@ export default function Home(){
         <div className="section-shell grid min-h-[calc(100vh-5rem)] grid-cols-1 items-center gap-10 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-bold uppercase text-white/90 backdrop-blur">24/7 fumigation response</span>
-            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Cleaner spaces. Safer homes. Faster pest control.</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90">Instakill provides professional fumigation, pest control, sofa cleaning, mattress cleaning, carpet cleaning, and deep cleaning across Nairobi, Kiambu, and country-wide for larger contracts.</p>
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Skilled and Experienced Pest exterminators and cleaners</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90">Welcome to Instakill Fumigation & Cleaning Services Ltd. We provide a comprehensive range of effective pest control and fumigation services for residential homes, commercial establishments such as restaurants, hotels, offices, and retail spaces, as well as industrial facilities including warehouses, godowns, and manufacturing plants. Our team is fully licensed, certified, and compliant with all relevant Kenyan regulatory authorities, ensuring that every service is delivered safely, professionally, and to the highest industry standards. In addition to pest control, we offer a wide range of professional cleaning and maintenance services, including sofa cleaning, deep cleaning, post-construction cleaning, landscaping, water tank cleaning, office cleaning, and general property maintenance.</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/contact" className="cta-primary">

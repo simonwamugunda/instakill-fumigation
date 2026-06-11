@@ -3,13 +3,13 @@ import { Link, NavLink } from 'react-router-dom'
 import { ChevronDown, Menu, MessageSquare, Phone, ShieldCheck, X } from 'lucide-react'
 
 const serviceLinks = [
+  { to: '/services/pest-control', label: 'Pest Control' },
   { to: '/services/sofa', label: 'Sofa Cleaning' },
   { to: '/services/mattress', label: 'Mattress Cleaning' },
   { to: '/services/deep', label: 'Deep Cleaning' },
   { to: '/services/carpet', label: 'Carpet Cleaning' },
   { to: '/services/post', label: 'Post Construction' },
-  { to: '/services/tk', label: 'Toilet & Kitchen' },
-  { to: '/services/pest-control', label: 'Pest Control' }
+  { to: '/services/tk', label: 'Toilet & Kitchen' }
 ]
 
 const navClass = ({ isActive }) =>

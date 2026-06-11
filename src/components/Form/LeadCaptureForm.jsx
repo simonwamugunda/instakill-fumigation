@@ -3,7 +3,7 @@ import { Send } from 'lucide-react'
 import Button from '../ui/Button'
 
 export default function LeadCaptureForm(){
-  const [formData, setFormData] = useState({ name: '', phone: '', service: 'sofa' })
+  const [formData, setFormData] = useState({ name: '', phone: '', service: 'pest-control' })
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e) => {
@@ -52,13 +52,13 @@ export default function LeadCaptureForm(){
       <div>
         <label className="block text-xs font-bold uppercase text-slate-600">Service</label>
         <select value={formData.service} onChange={e => setFormData({...formData, service: e.target.value})} className="field-control">
+          <option value="pest-control">Pest Control</option>
           <option value="sofa">Sofa Cleaning</option>
           <option value="mattress">Mattress Cleaning</option>
           <option value="deep">Deep Cleaning</option>
           <option value="carpet">Carpet Cleaning</option>
           <option value="post">Post Construction Cleaning</option>
           <option value="tk">Toilet & Kitchen Cleaning</option>
-          <option value="pest-control">Pest Control</option>
         </select>
       </div>
 

@@ -8,7 +8,7 @@ import pestOne from '../images/pest control.jpg'
 import pestTwo from '../images/pest control1.jpg'
 import pestThree from '../images/pest control2.jpg'
 
-const pests = ['Bed bugs', 'Termites', 'Rodents', 'Cockroaches', 'Ants', 'Wasps', 'Scorpions']
+const pests = ['Bed bugs', 'Cockroaches', 'Termites', 'Rodents', 'Ants', 'Wasps', 'Scorpions']
 
 export default function PestControl(){
   return (
@@ -20,7 +20,7 @@ export default function PestControl(){
           <div>
             <span className="eyebrow">Infestation control</span>
             <h1 className="mt-4 display-title">Stop the outbreak and reduce the chance it returns</h1>
-            <p className="section-copy">Instakill uses targeted treatment planning, practical preparation advice, and follow-up guidance to handle common pest problems without leaving clients confused about what comes next.</p>
+            <p className="section-copy">We use up to date techniques and technology to effectively exterminate pests in residential homes, business (such as restaurants, hotels, and offices), and industrial facilities (such as godowns and warehouses). For bedbugs and cockroaches we give an 8 months warranty. If there is a recurrence of the infestation, a free follow up fumigation is performed. For bedbugs we perform a triple treatment: first a heat treatment for wooden items, then a manual pump spray (including clothes, shoes, and beddings), and finally thermal fogging. After the three procedures the house is locked for three hours to limit oxygen entry and allow the pesticides to settle. After 3 hours the house is ready to be occupied again.</p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {pests.map(pest => (
