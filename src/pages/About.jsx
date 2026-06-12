@@ -56,7 +56,7 @@ export default function About(){
           </div>
           <div>
             <h2 className="text-2xl font-extrabold text-brand-darkBlue">Service area</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">We operate in Nairobi and Kiambu counties, and provide country-wide support for larger contracts and commercial clients.</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">We operate in Nairobi, Kiambu, Nakuru, Mombasa, Kajiado, and Machakos counties, and provide country-wide support for larger contracts and commercial clients.</p>
           </div>
         </div>
       </section>

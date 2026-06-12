@@ -8,7 +8,7 @@ const faqs = [
   { q: 'Do you provide safety guidance before treatment?', a: 'Yes. We explain preparation steps, ventilation timing, pet precautions, and aftercare based on the service selected.' },
   { q: 'Can you handle urgent pest infestations?', a: 'Yes. Call or WhatsApp 0740611883 for emergency response and the team will advise the fastest available dispatch.' },
   { q: 'What should I do before fumigation or deep cleaning?', a: 'Clear accessible surfaces, secure food and personal items, and share photos of the affected area when booking.' },
-  { q: 'Do you serve areas outside Nairobi?', a: 'Yes. We serve Nairobi and Kiambu regularly, with country-wide service for larger commercial and contract work.' },
+  { q: 'Do you serve areas outside Nairobi?', a: 'Yes. We serve Nairobi, Kiambu, Nakuru, Mombasa, Kajiado, and Machakos regularly, with country-wide service for larger commercial and contract work.' },
   { q: 'Do you offer a guarantee?', a: 'Guarantee terms depend on the service and treatment type. The team explains follow-up expectations before work begins.' }
 ]
 

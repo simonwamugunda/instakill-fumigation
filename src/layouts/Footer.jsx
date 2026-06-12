@@ -20,7 +20,7 @@ export default function Footer(){
                 <p className="text-sm font-semibold text-emerald-300">Cleaning, fumigation, pest control</p>
               </div>
             </div>
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">Safe, certified cleaning and pest control across Nairobi, Kiambu, and nationwide for larger contracts.</p>
+            <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">Safe, certified cleaning and pest control across Nairobi, Kiambu, Nakuru, Mombasa, Kajiado, and Machakos, and nationwide for larger contracts.</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a href="tel:+254740611883" className="cta-primary">
                 <Phone className="h-4 w-4" />
@@ -38,7 +38,7 @@ export default function Footer(){
             <div className="mt-4 space-y-4 text-sm leading-6 text-slate-300">
               <p className="flex gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
-                Nairobi, Kiambu, and country-wide service for commercial projects.
+                Nairobi, Kiambu, Nakuru, Mombasa, Kajiado, Machakos, and country-wide service for commercial projects.
               </p>
               <p className="flex gap-3">
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
